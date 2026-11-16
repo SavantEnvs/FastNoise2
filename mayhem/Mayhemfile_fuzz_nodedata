@@ -1,0 +1,10 @@
+project: savantenvs/FastNoise2
+target: fuzz_nodedata
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_nodedata/testsuite
+cmds:
+  - cmd: /mayhem/mayhem/out/fuzz_nodedata
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/fuzz_nodedata/fuzz_nodedata.dict
+    timeout: 10

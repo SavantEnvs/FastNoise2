@@ -1,0 +1,9 @@
+project: savantenvs/FastNoise2
+target: fuzz_generate
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_generate/testsuite
+cmds:
+  - cmd: /mayhem/mayhem/out/fuzz_generate
+    libfuzzer: true
+    timeout: 10

@@ -1,0 +1,10 @@
+project: savantenvs/FastNoise2
+target: fuzz_encoded_tree
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_encoded_tree/testsuite
+cmds:
+  - cmd: /mayhem/mayhem/out/fuzz_encoded_tree
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/fuzz_encoded_tree/fuzz_encoded_tree.dict
+    timeout: 10
